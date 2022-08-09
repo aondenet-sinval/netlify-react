@@ -1,0 +1,61 @@
+import './App.css';
+import {
+	Container, Row, Col, Badge } from 'react-bootstrap/';
+import Example from './components/Example';
+import TopMenu from './components/TopMenu';
+import { CarouselPiscinas, CarouselQuartoInter,
+			CarouselRecepcao } from './components/Carrossel/';
+import Fotos from './components/Fotos';
+import FormReserva from './components/FormReserva';
+import Terms from './components/Terms';
+import FooterBottom  from './components/FooterBottom';
+import Disponibilidade  from './components/Disponibilidade';
+
+
+
+function App() {
+  return (
+    <div className="App">
+    <Container className="d-flex flex-column" fluid>
+		<Row className="fixed-top"><TopMenu /></Row>
+		<Row id={"HOME"} className="pt-3"><CarouselPiscinas /></Row>
+		</Container>
+		<Container className="mw-100" fluid>
+				<h1 tabindex={0}>Website React em Desenvolvimento para treinamento</h1>
+				<h2 tabindex={0}>Dividindo em 4 colunas se o dispositivo for maior que 1400px:</h2>
+				<p tabindex={0}>Se seu dispositivo for menor você verá colunas enfileiradas verticalmente. Beleza?</p>
+				<Row>
+					<Col xxl={3}><Example /></Col>
+					<Col xxl={3}><Example /></Col>
+					<Col xxl={3}><Example /></Col>
+					<Col xxl={3}><Example /></Col>
+				</Row>
+				<h2 tabindex={0} className="sr-only sr-only-focusable">Dividindo em 3 colunas se o dispositivo for maior que 1200px:</h2>
+				<p tabindex={0}>Se seu dispositivo for menor você verá colunas enfileiradas verticalmente. Beleza?</p>
+				<Row>
+					<Col xl={4}><Example /></Col>
+					<Col xl={4}><Example /></Col>
+					<Col xl={4}><Example /></Col>
+				</Row>
+				<h2 tabindex={0} id={"DuasColunas"} className="sr-only sr-only-focusable">Dividindo em 2 colunas se o dispositivo for maior que 576px:</h2>
+				<p tabindex={0}>Se seu dispositivo for menor você verá colunas enfileiradas verticalmente. Beleza?</p>
+				<Row className="d-flex">
+					<Col sm={6}><CarouselRecepcao /></Col>
+					<Col sm={6}><CarouselQuartoInter /></Col>
+				</Row>
+				<h2 tabindex={0} className="d-flex justify-content-center p-5 sr-only sr-only-focusable" id={"Fotos"}>Fotos em 3 colunas se o dispositivo for maior que 1200px:</h2>
+				<p tabindex={0}>Caso seu dispositivo seja menor você verá as fotos enfileiradas verticalmente. Beleza?</p>
+				<Container className="d-flex justify-content-center p-5" fluid> <Fotos /> </Container>
+				<Badge><h3 id={"Reserva"}>Pedido de Reserva</h3></Badge>
+				<Container className="d-flex justify-content-center">
+					<FormReserva />
+				</Container>
+				<Container> <Terms /> </Container>
+				<Container> <Disponibilidade /> </Container>
+				<Container className="w-auto" fluid> <FooterBottom /> </Container>
+			</Container>
+    </div>
+  );
+}
+
+export default App;
