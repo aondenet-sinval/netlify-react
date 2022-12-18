@@ -10,7 +10,7 @@ import FormReserva from './components/FormReserva';
 import Terms from './components/Terms';
 import FooterBottom  from './components/FooterBottom';
 import Disponibilidade  from './components/Disponibilidade';
-
+import LoginButton from './components/login'
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
     <Container className="d-flex flex-column" fluid>
 		<Row className="fixed-top"><TopMenu /></Row>
 		<Row id={"HOME"} className="pt-3"><CarouselPiscinas /></Row>
+		<LoginButton />
 		</Container>
 		<Container className="mw-100" fluid>
 				<h1 tabindex={0}>Website React em Desenvolvimento para treinamento</h1>
